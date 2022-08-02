@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Grid from './Grid';
 import Thumb from './Thumb';
 import Img1 from '../images/page1.png';
+import Img2 from '../images/technologiczni.png';
+import GitHubImg from '../images/github.png';
 
 const Wrapper = styled.div`
     display: flex;
@@ -43,27 +45,27 @@ const Portfolio = () => (
             <Thumb
                 title='Technologiczni'
                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                img={Img1}
+                img={Img2}
             />
             <Thumb
                 title='Task manager'
                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                img={Img1}
+                img={GitHubImg}
             />
             <Thumb 
                 title='Current Page'
                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                img={Img1}
+                img={GitHubImg}
             />
             <Thumb
                 title='Technologiczni'
                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                img={Img1}
+                img={GitHubImg}
             />
             <Thumb
                 title='Task manager'
                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
-                img={Img1}
+                img={GitHubImg}
             />
         </Grid>
     </Wrapper>

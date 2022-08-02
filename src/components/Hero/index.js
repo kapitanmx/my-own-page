@@ -18,6 +18,7 @@ const Hero = () => {
                     <h2>Junior fullstack developer</h2>
                     <p>See more below</p>
                 </TextBox>
+
                 <Arrow>
                     <div />
                     <div />

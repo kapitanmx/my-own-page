@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Wrapper, Content, Button, Line} from './Header.styles';
 
+
 const Header = () => {
 
     const [scrolled, isScrolled] = useState(false);
@@ -17,15 +18,15 @@ const Header = () => {
     return (
         <Wrapper isScrolled={scrolled}>
             <Button>
-                <a>Background</a>
+                Background
                 <Line className="Line1"/>
             </Button>
             <Button>
-                <a>My portfolio</a>
+                My portfolio
                 <Line className="Line2"/>
             </Button>
             <Button>
-                <a>Contact</a>
+                Contact
                 <Line className="Line3"/>
             </Button>
         </Wrapper>

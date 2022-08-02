@@ -9,6 +9,6 @@ const Thumb = ({title, text, img}) => (
             <Img src={img} />
         </Content>
     </Wrapper>
-)
+);
 
 export default Thumb;

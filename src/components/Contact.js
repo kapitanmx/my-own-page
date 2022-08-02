@@ -17,12 +17,11 @@ const Contact = () => (
     <Wrapper>
         <h1>Let's stay in touch</h1>
         <h2>👇 How to reach me 👇</h2>
-        <p>Via Facebook: </p>
-        <p>Via Github: </p>
-        <p>Via LinkedIn: </p>
-        <p>Via Email: </p>
-        <p>Via Mobile: </p>
-        <h2>I believe that our collaboration will be great! </h2>
+        <a href="https://github.com/kapitanmx"><p>Via Github</p></a>
+        <a href="https://www.linkedin.com/in/miko%C5%82aj-wo%C5%82oszyn-a543941b3/"><p>Via LinkedIn</p></a>
+        <p>Via Email: kapitanmx823@gmail.com</p>
+        <p>Via Mobile: +48 664 412 219</p>
+        <h2>I believe that our collaboration will be successful! </h2>
     </Wrapper>
 );
 

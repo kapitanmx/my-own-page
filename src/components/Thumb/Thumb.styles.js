@@ -1,4 +1,20 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
+
+const animatedThumbIn = keyframes`
+    from {
+        transform: scale(1);
+    } to {
+        transform: scale(1.1);
+    }
+`;
+
+const animatedThumbOut = keyframes`
+    from {
+        transform: scale(1.1);
+    } to {
+        transform: scale(1);
+    }
+`;
 
 export const Wrapper = styled.div`
     -webkit-box-shadow: 1px 1px 24px 0px rgba(66, 68, 90, 1);
@@ -9,6 +25,11 @@ export const Wrapper = styled.div`
     padding: 20px 20px;
     width: 100%;
     max-width: 720px;
+    animation: ${animatedThumbOut} 0.3s ease-out;
+    &:hover {
+        animation: ${animatedThumbIn} 0.3s ease-in;
+        animation-fill-mode: forwards;
+    }
 `;
 
 export const Content = styled.div`
