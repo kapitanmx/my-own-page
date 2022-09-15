@@ -42,7 +42,7 @@ const Portfolio = () => {
 
     return (
         <Wrapper id="portfolio">
-            <Title><h1 data-aos='zoom-in'>My Portfolio</h1></Title>
+            <Title><h1 data-aos='zoom-in' data-aos-duration="1000">My Portfolio</h1></Title>
             <Text><h2 data-aos='fade-up'>My own projects</h2></Text>
             <Grid>
                 <Thumb 

@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Dashboard from './components/Dashboard';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
+import ArrowTop from './components/ArrowTop';
 import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
 
@@ -41,18 +42,12 @@ import {GlobalStyle} from './GlobalStyle';
 // };
 
 const App = () => {
-
-  const ref = useRef(null);
-
-  const handleClick = () => {
-    ref.current?.scrollIntoView({behavior: 'smooth'});
-  }
-
   return (
       <>
         <Header/>
-        <Hero executeScroll={handleClick}/>
-        <Dashboard ref={ref}/>
+        <ArrowTop />
+        <Hero/>
+        <Dashboard/>
         <Portfolio />
         <Contact />
         <Footer />

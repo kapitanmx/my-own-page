@@ -185,12 +185,12 @@ const Hero = () => {
             </Content> */}
             <Content>
                 <TextBox>
-                    <h2 data-aos='fade-up'>Junior fullstack developer</h2>
-                    <Button data-aos='fade-up'>
+                    <h2 data-aos='fade-up' data-aos-duration="3000">Junior fullstack developer</h2>
+                    <Button data-aos='fade-up' data-aos-duration="3000">
                         <a href="#dashboard">See more</a>
                     </Button>
                 </TextBox>
-                <div>
+                <div data-aos='fade-in' data-aos-delay="400" data-aos-duration="3000">
                     <Arrow>
                         <div />
                         <div />

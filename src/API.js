@@ -18,23 +18,4 @@ const getData = {
     }
 };
 
-const apiSettings = {
-    fetchData: async () => {
-        const endpoint = `${API_URL}/${DATA_ENDPOINT}`;
-        return await (await fetch(endpoint)).json();
-    },
-    sendData: async (name, lastName, email, text) => {
-        const bodyData = {
-            name,
-            lastName,
-            email,
-            text
-        };
-        const data = await (
-            await fetch(DATA_ENDPOINT, {
-                ...defaultConfig,
-                body: JSON.stringify(bodyData)
-            })
-        ).json();
-    }
-}
+const apiSettings = {}
