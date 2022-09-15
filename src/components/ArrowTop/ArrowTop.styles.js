@@ -4,18 +4,13 @@ const movebtn = keyframes`
   0%{
     transform: translateY(0px);
   }
-  25%{
-    transform: translateY(20px);
-  }
   50%{
-    transform: translateY(0px);
-  }
-  75%{
-    transform: translateY(-20px);
+    transform: translateY(30px);
   }
   100%{
     transform: translateY(0px);
   }
+
 `;
 
 export const Wrapper = styled.div`
@@ -36,5 +31,6 @@ export const Arrow = styled.img`
     cursor: pointer;
     &:hover{
         animation: ${movebtn} 3s ease-in-out infinite;
+        animation-fill-mode: forwards;
     }
 `;
