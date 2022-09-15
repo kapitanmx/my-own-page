@@ -29,6 +29,7 @@ export const GlobalStyle = createGlobalStyle`
     * {
         box-sizing: border-box;
         font-family: 'Nunito', sans-serif;
+        scroll-behavior: smooth;
     }
 
     body {

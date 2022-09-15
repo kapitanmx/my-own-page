@@ -1,7 +1,7 @@
 const API_URL = ``;
 const API_KEY = ``;
 
-const MAIL_ENDPOINT = ``;
+const DATA_ENDPOINT = ``;
 
 export {
     API_URL,

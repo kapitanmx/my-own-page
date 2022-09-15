@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import Grid from './Grid';
 import Thumb from './Thumb';
 import Img1 from '../images/page1.png';
 import Img2 from '../images/technologiczni.png';
 import GitHubImg from '../images/github.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+
+AOS.init();
 
 const Wrapper = styled.div`
     display: flex;
@@ -32,43 +36,54 @@ const Text = styled.div`
     padding: 20px 20px;
 `;
 
-const Portfolio = () => (
-    <Wrapper>
-        <Title><h1>My Portfolio</h1></Title>
-        <Text><h2>My own projects</h2></Text>
-        <Grid>
-            <Thumb 
-                title='Current Page'
-                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                img={Img1}
-            />
-            <Thumb
-                title='Technologiczni'
-                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                img={Img2}
-            />
-            <Thumb
-                title='Task manager'
-                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                img={GitHubImg}
-            />
-            <Thumb 
-                title='Current Page'
-                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                img={GitHubImg}
-            />
-            <Thumb
-                title='Technologiczni'
-                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                img={GitHubImg}
-            />
-            <Thumb
-                title='Task manager'
-                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
-                img={GitHubImg}
-            />
-        </Grid>
-    </Wrapper>
-);
+
+const Portfolio = () => {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <Wrapper id="portfolio">
+            <Title><h1 data-aos='zoom-in'>My Portfolio</h1></Title>
+            <Text><h2 data-aos='fade-up'>My own projects</h2></Text>
+            <Grid>
+                <Thumb 
+                    title='Current Page'
+                    text='Simple portfolio page, created with React'
+                    img={Img1}
+                    onClick={() => setOpen(!open)}
+                />
+                <Thumb
+                    title='Technologiczni.edu.pl'
+                    text='Commisioned page, created with React'
+                    img={Img2}
+                    onClick={() => setOpen(!open)}
+                />
+                <Thumb
+                    title='Task manager'
+                    text='A CRUD application, created in Go'
+                    img={GitHubImg}
+                    onClick={() => setOpen(!open)}
+                />
+                <Thumb 
+                    title='Currency rates app'
+                    text='Very simple client for external API'
+                    img={GitHubImg}
+                    onClick={() => setOpen(!open)}
+                />
+                <Thumb
+                    title='ATM Simulator'
+                    text='A CRUD application, created in Go'
+                    img={GitHubImg}
+                    onClick={() => setOpen(!open)}
+                />
+                <Thumb
+                    title='Simple weather app'
+                    text='A simple CRUD application, created in Go'
+                    img={GitHubImg}
+                    onClick={() => setOpen(!open)}
+                />
+            </Grid>
+        </Wrapper>
+    );
+};
 
 export default Portfolio;

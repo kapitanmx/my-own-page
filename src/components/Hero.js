@@ -1,4 +1,10 @@
+import React from 'react';
+// import Avatar from '../../images/mikolaj_woloszyn.jpg';
 import styled, {keyframes} from 'styled-components';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+
+AOS.init();
 
 const ImgAnimationIn = keyframes`
     from {
@@ -42,7 +48,7 @@ const rainbow = keyframes`
     100%{background-position:0% 82%}
 `;
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
     display: flex;
     background: var(--black);
     flex-direction: column;
@@ -52,6 +58,9 @@ export const Wrapper = styled.div`
     padding: 0 auto;
     height: 90vh;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+    @media screen and (max-width: 720px) {
+        height: 800px;
+    }
     h1 {
         max-width: 480px;
         overflow: hidden;
@@ -79,10 +88,11 @@ export const Wrapper = styled.div`
     }
 `;
 
-export const Content = styled.div`
+const Content = styled.div`
     display: flex:
     flex-direction: column;
-    justify-content: center;
+    justify-content: center !important;
+    align-items: center !important;
     color: var(--white);
     margin: 0;
     padding: 50px 50px;
@@ -91,7 +101,7 @@ export const Content = styled.div`
     }
 `;
 
-export const TextBox = styled.div`
+const TextBox = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,7 +110,7 @@ export const TextBox = styled.div`
     margin: 0;
 `;
 
-export const Title = styled.div`
+const Title = styled.div`
     display: flex;
     justify-content: center;
     color: var(--white);
@@ -108,9 +118,8 @@ export const Title = styled.div`
     padding: 20px 20px;
 `;
 
-export const Arrow = styled.span`
-    position: absolute;
-    top: 70%;
+const Arrow = styled.span`
+    position: relative;
     bottom: 0;
     right: 0;
     left: 50%;
@@ -141,22 +150,56 @@ export const Arrow = styled.span`
     }
 `;
 
-export const Img = styled.img`
-    position: absolute;
-    top: 35%;
-    bottom: 0;
-    right: 0;
-    left: 47%;
-    width: 120px;
-    height: 120px;
-    margin: 0;
-    clip-path: circle(50% at 50% 50%);
-    animation: ${ImgAnimationOut} 0.5s ease-out;
-    &:hover {
-        animation: ${ImgAnimationIn} 0.5s ease-in;
-        animation-fill-mode: forwards;
-    }
-    @media screen and (max-width: 730px) {
-        left: 37%
-    }
+export const Button = styled.div`
+    display: block;
+    margin: 20px 20px;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
 `;
+
+// const Img = styled.img`
+//     position: relative;
+//     left: 47%;
+//     width: 120px;
+//     height: 120px;
+//     margin: 0;
+//     clip-path: circle(50% at 50% 50%);
+//     animation: ${ImgAnimationOut} 0.5s ease-out;
+//     &:hover {
+//         animation: ${ImgAnimationIn} 0.5s ease-in;
+//         animation-fill-mode: forwards;
+//     }
+// `;
+
+const Hero = () => {
+    return (
+        <Wrapper>
+            <Content>
+                <Title>
+                    <h1 data-aos='fade-in'>Mikołaj Wołoszyn</h1>
+                </Title>
+            </Content>
+            {/* <Content>
+                <Img src={Avatar}/>
+            </Content> */}
+            <Content>
+                <TextBox>
+                    <h2 data-aos='fade-up'>Junior fullstack developer</h2>
+                    <Button data-aos='fade-up'>
+                        <a href="#dashboard">See more</a>
+                    </Button>
+                </TextBox>
+                <div>
+                    <Arrow>
+                        <div />
+                        <div />
+                        <div />
+                    </Arrow>
+                </div>
+            </Content>
+        </Wrapper>
+    )
+}
+
+export default Hero;

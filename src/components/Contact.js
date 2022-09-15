@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+
+AOS.init();
+
 
 const Wrapper = styled.div`
     display: flex;
@@ -14,14 +19,14 @@ const Wrapper = styled.div`
 `;
 
 const Contact = () => (
-    <Wrapper>
-        <h1>Let's stay in touch</h1>
-        <h2>👇 How to reach me 👇</h2>
-        <a href="https://github.com/kapitanmx"><p>Via Github</p></a>
-        <a href="https://www.linkedin.com/in/miko%C5%82aj-wo%C5%82oszyn-a543941b3/"><p>Via LinkedIn</p></a>
-        <p>Via Email: kapitanmx823@gmail.com</p>
-        <p>Via Mobile: +48 664 412 219</p>
-        <h2>I believe that our collaboration will be successful! </h2>
+    <Wrapper id="contact">
+        <h1 data-aos='zoom-in'>Let's stay in touch</h1>
+        <h2 data-aos='fade-up'>👇 How to reach me 👇</h2>
+        <a href="https://github.com/kapitanmx" data-aos='fade-up'><p>Via Github</p></a>
+        <a href="https://www.linkedin.com/in/miko%C5%82aj-wo%C5%82oszyn-a543941b3/" data-aos='fade-up'><p>Via LinkedIn</p></a>
+        <a href="mailto:kapitanmx823@gmail.com?subject=subject&cc=cc@gmail.com" data-aos='fade-up'><p>Via Email</p></a>
+        <p data-aos='fade-up'>Via Mobile: +48 664 412 219</p>
+        <h2 data-aos='fade-up'>I believe that our collaboration might be successful! </h2>
     </Wrapper>
 );
 

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 
 //Components
 import Header from './components/Header';
-import Home from './components/Home';
+import Hero from './components/Hero';
 import Dashboard from './components/Dashboard';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
@@ -41,11 +41,18 @@ import {GlobalStyle} from './GlobalStyle';
 // };
 
 const App = () => {
+
+  const ref = useRef(null);
+
+  const handleClick = () => {
+    ref.current?.scrollIntoView({behavior: 'smooth'});
+  }
+
   return (
       <>
         <Header/>
-        <Home />
-        <Dashboard />
+        <Hero executeScroll={handleClick}/>
+        <Dashboard ref={ref}/>
         <Portfolio />
         <Contact />
         <Footer />

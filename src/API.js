@@ -1,7 +1,7 @@
 import {
     API_URL,
     API_KEY,
-    MAIL_ENDPOINT
+    DATA_ENDPOINT
 } from './Config';
 
 const defaultConfig = {
@@ -11,18 +11,29 @@ const defaultConfig = {
     }
 };
 
+const getData = {
+    method: 'GET',
+    headers: {
+        'Content-Type' : 'application/json'
+    }
+};
+
 const apiSettings = {
-    putFormData: async (name, lastName, email, text) => {
-        const body = {
+    fetchData: async () => {
+        const endpoint = `${API_URL}/${DATA_ENDPOINT}`;
+        return await (await fetch(endpoint)).json();
+    },
+    sendData: async (name, lastName, email, text) => {
+        const bodyData = {
             name,
             lastName,
             email,
             text
         };
         const data = await (
-            await fetch(MAIL_ENDPOINT, {
+            await fetch(DATA_ENDPOINT, {
                 ...defaultConfig,
-                body: JSON.stringify(body)
+                body: JSON.stringify(bodyData)
             })
         ).json();
     }

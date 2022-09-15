@@ -30,12 +30,19 @@ export const Wrapper = styled.div`
         animation: ${animatedThumbIn} 0.3s ease-in;
         animation-fill-mode: forwards;
     }
+    @media screen and (max-width: 920px) {
+        animation: none !important;
+    }
 `;
 
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: 0;
+    h3 {
+        text-align: center;
+    }
 `;
 
 export const Img = styled.img`
