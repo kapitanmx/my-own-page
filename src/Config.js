@@ -1,10 +1,10 @@
-const API_URL = ``;
+const API_URL = `http://localhost:8000`;
 const API_KEY = ``;
 
-const DATA_ENDPOINT = ``;
+const DATA_ENDPOINT = `contact`;
 
 export {
     API_URL,
     API_KEY,
-    MAIL_ENDPOINT,
+    DATA_ENDPOINT,
 };

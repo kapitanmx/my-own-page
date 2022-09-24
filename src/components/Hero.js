@@ -172,12 +172,12 @@ export const Button = styled.div`
 //     }
 // `;
 
-const Hero = () => {
+const Hero = ({title, subtitle, linkText}) => {
     return (
         <Wrapper>
             <Content>
                 <Title>
-                    <h1 data-aos='fade-in'>Mikołaj Wołoszyn</h1>
+                    <h1 data-aos='fade-in'>{title}</h1>
                 </Title>
             </Content>
             {/* <Content>
@@ -185,9 +185,9 @@ const Hero = () => {
             </Content> */}
             <Content>
                 <TextBox>
-                    <h2 data-aos='fade-up' data-aos-duration="3000">Junior fullstack developer</h2>
+                    <h2 data-aos='fade-up' data-aos-duration="3000">{subtitle}</h2>
                     <Button data-aos='fade-up' data-aos-duration="3000">
-                        <a href="#dashboard">See more</a>
+                        <a href="#dashboard">{linkText}</a>
                     </Button>
                 </TextBox>
                 <div data-aos='fade-in' data-aos-delay="400" data-aos-duration="3000">

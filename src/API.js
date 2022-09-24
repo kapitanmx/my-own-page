@@ -11,11 +11,21 @@ const defaultConfig = {
     }
 };
 
-const getData = {
-    method: 'GET',
-    headers: {
-        'Content-Type' : 'application/json'
-    }
-};
+const apiSettings = {
+    fetchFormData: async (name, email, message) => {
+        const endpoint = `${API_URL}/${DATA_ENDPOINT}`;
+        const bodyData = {
+            name,
+            email,
+            message,
+        };
+        return await (
+            await fetch(endpoint, {
+                ...defaultConfig,
+                body: JSON.stringify(bodyData)
+            })
+        ).json();
+    },
+}
 
-const apiSettings = {}
+export default apiSettings;

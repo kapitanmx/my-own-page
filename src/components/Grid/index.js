@@ -1,11 +1,22 @@
 import React from 'react';
 import {Wrapper, Content} from './Grid.styles';
+import Thumb from '../Thumb';
 
-const Grid = ({header, children}) => (
-    <Wrapper>
-        <h2>{header}</h2>
-        <Content>{children}</Content>
-    </Wrapper>
-);
+const Grid = ({childrens}) => {
+    const childrensArr = [...childrens];
+    return (
+        <Wrapper>
+            <Content>
+                {childrensArr.map(childElem => (
+                    <Thumb 
+                        title={childElem.title} 
+                        text={childElem.text}
+                        img={childElem.img}
+                    />
+                ))}
+            </Content>
+        </Wrapper>
+    );
+}
 
 export default Grid;
