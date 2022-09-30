@@ -2,12 +2,11 @@ import React from 'react';
 import {Wrapper, Content} from './Grid.styles';
 import Thumb from '../Thumb';
 
-const Grid = ({childrens}) => {
-    const childrensArr = [...childrens];
+const Grid = ({children}) => {
     return (
         <Wrapper>
             <Content>
-                {childrensArr.map(childElem => (
+                {children.map(childElem => (
                     <Thumb 
                         title={childElem.title} 
                         text={childElem.text}

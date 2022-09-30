@@ -16,22 +16,21 @@ const Wrapper = styled.div`
     background: var(--black);
     color: var(--white);
     margin: 0;
-    padding: 100px 20px;
+    padding: 150px 20px;
 `;
 
 const Contact = ({links}) => {
-    const linksArr = [...links];
     return (
         <Wrapper id="contact">
             <h1 data-aos='zoom-in' data-aos-duration="1000">Let's stay in touch</h1>
             <h2 data-aos='fade-up' data-aos-delay="200">👇 Contact form 👇</h2>
             <ContactForm />
-            <h2 data-aos='fade-up' data-aos-delay="200">👇 How to reach me 👇</h2>
-            {linksArr.map((element) => (
+            {/* <h2 data-aos='fade-up' data-aos-delay="200">👇 How to reach me 👇</h2>
+            {links.map((element) => (
                 <a href={element.link} data-aos='fade-up' data-aos-delay="300"><p>{element.name}</p></a>
             ))}
             <p data-aos='fade-up' data-aos-delay="400">Via Mobile: +48 664 412 219</p>
-            <h2 data-aos='fade-up' data-aos-delay="500">I believe that our collaboration might be successful!</h2>
+            <h2 data-aos='fade-up' data-aos-delay="500">I believe that our collaboration might be successful!</h2> */}
         </Wrapper>
     );
 }

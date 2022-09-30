@@ -16,6 +16,11 @@ import Loader from './components/Hooks/Loader';
 //Styles
 import {GlobalStyle} from './GlobalStyle';
 
+//Imgs
+import Img1 from './images/page1.png';
+import Img2 from './images/technologiczni.png';
+import GitHubImg from './images/github.png';
+
 const App = () => {
 
   const AuthorData = {
@@ -36,6 +41,39 @@ const App = () => {
     like a web platform. If you want to know more, I invite you to contact me :)`,
   };
 
+  const PortfolioList = [
+    {
+        "title" : "Current Page",
+        "text" : "Simple portfolio page, created with React",
+        "img" : `${Img1}`,
+    },
+    {
+        "title" : "Technologiczni.edu.pl",
+        "text" : "Commisioned page, created with React",
+        "img" : `${Img2}`,
+    },
+    {
+        "title" : "Task manager",
+        "text" : "A CRUD application, created in Go",
+        "img" : `${GitHubImg}`,
+    },
+    {
+        "title" : "Currency rates app",
+        "text" : "Very simple client for external API",
+        "img" : `${GitHubImg}`,
+    },
+    {
+        "title" : "ATM Simulator",
+        "text" : "A CRUD application, created in Go",
+        "img" : `${GitHubImg}`,
+    },
+    {
+        "title" : "Simple weather app",
+        "text" : "A simple CRUD application, created in Go",
+        "img" : `${GitHubImg}`,
+    },
+  ];
+
   const LinkElements = [
     {
       "name" : "Via Github",
@@ -46,14 +84,18 @@ const App = () => {
       "link" : "https://www.linkedin.com/in/miko%C5%82aj-wo%C5%82oszyn-a543941b3/"
     },
     {
-      "name" : "Via LinkedIn",
+      "name" : "Via Email",
       "link" : "mailto:kapitanmx823@gmail.com?subject=subject&cc=cc@gmail.com"
     }
-  ]
+  ];
 
+  const Links = ["Dashboard", "Portfolio", "Contact"];
+ 
   return (
       <>
-        <Header/>
+        <Header
+            links={Links}
+        />
         <ArrowTop />
         <Hero 
           title={AuthorData.name}
@@ -65,7 +107,9 @@ const App = () => {
           subtitle={Content.subtitle}
           text={Content.text}
         />
-        <Portfolio />
+        <Portfolio 
+          PortfolioList={PortfolioList}
+        />
         <Contact 
           links={LinkElements}
         />

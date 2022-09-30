@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Wrapper, Content, Button, Line, MobileMenu, MobileButton, MobileBurger} from './Header.styles';
 
 
-const Header = () => {
+const Header = ({links}) => {
 
     const [scrolled, isScrolled] = useState(false);
     const [open, setOpen] = useState(false);
@@ -24,28 +24,18 @@ const Header = () => {
                 <div />
             </MobileBurger>
             <MobileMenu open={open} setOpen={setOpen}>
-                <MobileButton onClick={() => setOpen(!open)}>
-                    <a href='#dashboard'>Background</a>
-                </MobileButton>
-                <MobileButton onClick={() => setOpen(!open)}>
-                    <a href='#portfolio'>Portfolio</a>
-                </MobileButton>
-                <MobileButton onClick={() => setOpen(!open)}>
-                    <a href='#contact'>Contact</a>
-                </MobileButton>
+                {links.map(link => (
+                    <MobileButton onClick={() => setOpen(!open)}>
+                        <a href={'#' + link.toLowerCase()}>{link}</a>
+                    </MobileButton>
+                ))}
             </MobileMenu>
-            <Button>
-                <a href="#dashboard">Background</a>
-                <Line className="Line1"/>
-            </Button>
-            <Button>
-                <a href="#portfolio">My portfolio</a>
-                <Line className="Line2"/>
-            </Button>
-            <Button>
-                <a href="#contact">Contact</a>
-                <Line className="Line3"/>
-            </Button>
+            {links.map(link => (
+                <Button>
+                    <a href={'#' + link.toLowerCase()}>{link}</a>
+                    <Line className={"Line" + (links.indexOf(link) + 1)}/>
+                </Button>
+            ))}
         </Wrapper>
     )
 };
