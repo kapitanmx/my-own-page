@@ -24,7 +24,8 @@ const ContactForm = () => {
     }
 
     const handleName = target => {
-        if (target.value.length < 3){
+        if ((target.value.length < 3)
+        || (typeof target.value === 'number')){
             setNameInputError(true);
         } else {
             setNameInputError(false);
@@ -33,9 +34,9 @@ const ContactForm = () => {
     }
 
     const handleEmail = target => {
-        const mailRegEx = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-        if ((target.value.length < 4) 
-            && (!target.value.match(mailRegEx))) {
+        const mailRegEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if ((target.value.length < 7) 
+            || (target.value.match(mailRegEx) === null)) {
             setEmailInputError(true);
         } else {
             setEmailInputError(false);
@@ -55,10 +56,12 @@ const ContactForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         if (nameInputError && emailInputError && messageInputError) {
-            setError(true)
+            setError(true);
+            return;
+        } else {
+            fetchFormData(data);
             return;
         }
-        fetchFormData(data);
     }
 
     return (
@@ -81,7 +84,7 @@ const ContactForm = () => {
                             onChange={(e) => handleEmail(e.target)}
                             error={emailInputError}
                         />
-                        {emailInputError && <ErrorMessage>Invalid email form</ErrorMessage>}
+                        {emailInputError && <ErrorMessage>Invalid email</ErrorMessage>}
                     </div>
                 </FieldBox>
                 <StyledTextArea
