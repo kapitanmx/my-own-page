@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 
 const Loader = () => {
     const [loading, setLoading] = useState(true);
@@ -13,4 +13,4 @@ const Loader = () => {
     return loading;
 };
 
-export default Loader
+export default Loader;

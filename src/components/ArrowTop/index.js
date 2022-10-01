@@ -13,6 +13,7 @@ const ArrowTop = () => {
           setShowTopBtn(false);
         }
       });
+      window.removeEventListener('scroll', () => {return});
     }, []);
 
     const goToTop = () => {

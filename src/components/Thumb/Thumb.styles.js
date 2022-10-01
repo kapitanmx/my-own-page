@@ -25,6 +25,7 @@ export const Wrapper = styled.div`
     padding: 20px 20px;
     width: 100%;
     max-width: 720px;
+    height: 100%;
     animation: ${animatedThumbOut} 0.3s ease-out;
     &:hover {
         animation: ${animatedThumbIn} 0.3s ease-in;

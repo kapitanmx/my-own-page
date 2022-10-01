@@ -33,12 +33,12 @@ const App = () => {
     "title" : "Background",
     "subtitle" : "Hi there! 👋",
     "text" : `My name is Mikołaj, I'm currently 20 years old. I love discover new thinks, such as many technologies, especially in IT sector. 
-    For many years, I was self-studying. Now I'm an undergraduate, my Alma Mater is Silesian University of Technology in Gliwice, Poland.
+    This is my biggest hobby. For many years, I was self-studying. Now I'm an undergraduate, my Alma Mater is Silesian University of Technology in Gliwice, Poland.
     I gained some experience in Front-End, I know well basics and many advanced thinks, in languages and tools used in this branch, like 
-    JS, React, NPM, SCSS, Styled Components, Webpack etc. I also trying to learn Back-End stack, such as Go, REST API, MongoDB, Firebase, Docker. 
-    ${<br/>}
+    JS, React, NPM, SCSS, Styled Components, Webpack etc. I also trying to learn Back-End stack, such as Go, REST API, MongoDB, Firebase, Docker.
+
     I can build everything, from little and cheap websites based on templates, to bigger and custom web applications with necessary solutions, 
-    like a web platform. If you want to know more, I invite you to contact me :)`,
+    like an e-commerce web platform. If you want to know more, I invite you to contact me :)`,
   };
 
   const PortfolioList = [
@@ -46,31 +46,37 @@ const App = () => {
         "title" : "Current Page",
         "text" : "Simple portfolio page, created with React",
         "img" : `${Img1}`,
+        "url" : `/`
     },
     {
         "title" : "Technologiczni.edu.pl",
         "text" : "Commisioned page, created with React",
         "img" : `${Img2}`,
+        "url" : `http://technologiczni.edu.pl/`
     },
     {
         "title" : "Task manager",
         "text" : "A CRUD application, created in Go",
         "img" : `${GitHubImg}`,
+        "url" : `/`
     },
     {
         "title" : "Currency rates app",
         "text" : "Very simple client for external API",
         "img" : `${GitHubImg}`,
+        "url" : `https://github.com/kapitanmx/currency-exchange-app`
     },
     {
         "title" : "ATM Simulator",
         "text" : "A CRUD application, created in Go",
         "img" : `${GitHubImg}`,
+        "url" : `https://github.com/kapitanmx/ATM`
     },
     {
         "title" : "Simple weather app",
         "text" : "A simple CRUD application, created in Go",
         "img" : `${GitHubImg}`,
+        "url" : `/`
     },
   ];
 

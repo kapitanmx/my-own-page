@@ -11,6 +11,8 @@ const Grid = ({children}) => {
                         title={childElem.title} 
                         text={childElem.text}
                         img={childElem.img}
+                        url={childElem.url}
+                        clickable
                     />
                 ))}
             </Content>

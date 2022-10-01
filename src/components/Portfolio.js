@@ -12,6 +12,9 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     margin: 50px 0;
+    a {
+        color: var(--black);
+    }
 `;
 
 const Title = styled.div`

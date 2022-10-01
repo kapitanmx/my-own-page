@@ -42,11 +42,6 @@ const blinkCaret = keyframes`
     50% {border-color: white;}
 `;
 
-const rainbow = keyframes`
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-`;
 
 const Wrapper = styled.div`
     display: flex;
@@ -70,22 +65,25 @@ const Wrapper = styled.div`
         padding: 0;
         letter-spacing: .10em;
         animation:
-            ${typing} 3.5s steps(40, end),
+            ${typing} 5s steps(60, end),
             ${blinkCaret} .75s step-end infinite;
         @media screen and (max-width: 730px) {
             font-size: 2rem;
             margin: 0;
         }
     }
+
     h2 {
         background: rgb(60,73,245);
         background: linear-gradient(90deg, rgba(60,73,245,1) 36%, rgba(231,148,233,1) 72%);
-        /* background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-        background-size: 1800% 1800%; */
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        /* animation: ${rainbow} 18s ease infinite; */
     }
+
+    a {
+        color: var(--white);
+    }
+
 `;
 
 const Content = styled.div`
@@ -199,7 +197,7 @@ const Hero = ({title, subtitle, linkText}) => {
                 </div>
             </Content>
         </Wrapper>
-    )
+    );
 }
 
 export default Hero;

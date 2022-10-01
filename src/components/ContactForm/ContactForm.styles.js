@@ -39,7 +39,7 @@ export const StyledTextArea = styled.textarea`
     width: 100%;
     height: 70%;
     border: ${({error}) => (error ? '3px solid red' : 'none')};
-    border-radius: 20px;
+    border-radius: 40px;
     outline: none;
     @media screen and (max-width: 579px) {
         width: 80%;

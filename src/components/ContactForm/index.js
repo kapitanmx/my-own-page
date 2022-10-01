@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import API from '../../API';
 import { Wrapper, StyledField, FieldBox, StyledTextArea, StyledButton, ErrorMessage} from './ContactForm.styles';
 
@@ -65,7 +65,6 @@ const ContactForm = () => {
         <Wrapper>
             <form onSubmit={handleSubmit}>
                 <FieldBox>
-                    {/* <label htmlFor="name">Name</label> */}
                     <div>
                         <StyledField
                             type="text"
@@ -75,7 +74,6 @@ const ContactForm = () => {
                         />
                         {nameInputError && <ErrorMessage>Name must contain at least 3 characters</ErrorMessage>}
                     </div>
-                    {/* <label htmlFor="email">Email</label> */}
                     <div>
                         <StyledField
                             type="text"
