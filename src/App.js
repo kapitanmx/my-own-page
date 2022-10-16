@@ -17,9 +17,9 @@ import Loader from './components/Hooks/Loader';
 import {GlobalStyle} from './GlobalStyle';
 
 //Imgs
-import Img1 from './images/page1.png';
-import Img2 from './images/technologiczni.png';
-import GitHubImg from './images/github.png';
+import Img1 from './images/page1.jpg';
+import Img2 from './images/technologiczni.jpg';
+import GitHubImg from './images/github.jpg';
 
 const App = () => {
 
