@@ -6,6 +6,7 @@ import {
 
 const defaultConfig = {
     method: 'POST',
+    mode: 'no-cors',
     headers: {
         'Content-Type' : 'application/json'
     }
@@ -13,7 +14,7 @@ const defaultConfig = {
 
 const apiSettings = {
     fetchFormData: async (name, email, message) => {
-        const endpoint = `${API_URL}/${DATA_ENDPOINT}`;
+        const endpoint = `${API_URL}/${DATA_ENDPOINT}?name=${name}&email=${email}&message=${message}`;
         const bodyData = {
             name,
             email,

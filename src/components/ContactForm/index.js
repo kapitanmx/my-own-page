@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
+import reCAPTCHA from "react-google-recaptcha";
 import API from '../../API';
 import { Wrapper, StyledField, FieldBox, StyledTextArea, StyledButton, ErrorMessage} from './ContactForm.styles';
 
@@ -8,6 +9,8 @@ const ContactForm = () => {
     const [nameInputError, setNameInputError] = useState(false);
     const [emailInputError, setEmailInputError] = useState(false);
     const [messageInputError, setMessageInputError] = useState(false);
+    // const captchaRef = useRef(null);
+    // const token = captchaRef.current.getValue();
 
     const fetchFormData = async (formData) => {
         try {
@@ -19,49 +22,50 @@ const ContactForm = () => {
             );
 
         } catch (error) {
-            setError(true);
+            setError(error => !error);
         }
-    }
+    } 
 
     const handleName = target => {
-        if ((target.value.length < 3)
-        || (typeof target.value === 'number')){
+        if (target.value.length < 3){
             setNameInputError(true);
-        } else {
-            setNameInputError(false);
-            setData(values => ({...values, [target.name] : target.value }))
+            return;
         }
+        setNameInputError(false);
+        setData(values => ({...values, [target.name] : target.value }))
+        return;
     }
-
+    
     const handleEmail = target => {
         const mailRegEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if ((target.value.length < 7) 
-            || (target.value.match(mailRegEx) === null)) {
+        if (target.value.match(mailRegEx) === null) {
             setEmailInputError(true);
-        } else {
-            setEmailInputError(false);
-            setData(values => ({...values, [target.name] : target.value }))
+            return;
         }
+        setEmailInputError(false);
+        setData(values => ({...values, [target.name] : target.value }))
+        return;
     }
 
     const handleMessage = target => {
-        if (target.value.length < 50) {
+        if (target.value.length < 45) {
             setMessageInputError(true);
-        } else {
-            setMessageInputError(false);
-            setData(values => ({...values, [target.name] : target.value }))
+            return;
         }
+        setMessageInputError(false);
+        setData(values => ({...values, [target.name] : target.value }))
+        return;
     }
 
     const handleSubmit = e => {
         e.preventDefault();
+        // const token = captchaRef.current.getValue();
         if (nameInputError && emailInputError && messageInputError) {
             setError(true);
             return;
-        } else {
-            fetchFormData(data);
-            return;
         }
+        fetchFormData(data);
+        return;
     }
 
     return (
@@ -71,7 +75,9 @@ const ContactForm = () => {
                     <div>
                         <StyledField
                             type="text"
+                            name="name"
                             placeholder="Name"
+                            required minlength="3"
                             onChange={(e) => handleName(e.target)}
                             error={nameInputError}
                         />
@@ -79,8 +85,10 @@ const ContactForm = () => {
                     </div>
                     <div>
                         <StyledField
-                            type="text"
+                            type="email"
+                            name="email"
                             placeholder="Email"
+                            required minlength="3"
                             onChange={(e) => handleEmail(e.target)}
                             error={emailInputError}
                         />
@@ -89,11 +97,17 @@ const ContactForm = () => {
                 </FieldBox>
                 <StyledTextArea
                     type="text"
+                    name="message"
                     placeholder="Message..."
+                    required minlength="45"
                     onChange={(e) => handleMessage(e.target)}
                     error={messageInputError}
                 />
-                {messageInputError && <ErrorMessage>Message must contain at least 50 characters</ErrorMessage>}
+                {messageInputError && <ErrorMessage>Message must contain at least 45 characters</ErrorMessage>}
+                {/* <reCAPTCHA
+                    sitekey={process.env.REACT_APP_SITE_KEY}
+                    ref={captchaRef}
+                /> */}
                 <StyledButton onClick={handleSubmit}>Send</StyledButton>
                 {error && <ErrorMessage>Cannot send form</ErrorMessage>}
             </form>

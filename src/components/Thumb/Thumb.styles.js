@@ -45,7 +45,3 @@ export const Content = styled.div`
         text-align: center;
     }
 `;
-
-export const Img = styled.img`
-    
-`;

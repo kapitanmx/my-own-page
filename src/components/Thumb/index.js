@@ -1,5 +1,5 @@
 import React from 'react';
-import {Wrapper, Content, Img} from './Thumb.styles';
+import {Wrapper, Content} from './Thumb.styles';
 // import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
@@ -14,7 +14,7 @@ const Thumb = ({title, text, img, url, clickable}) => (
                     <Content>
                         <h3>{title}</h3>
                         <p>{text}</p>
-                        <Img src={img} />
+                        <img src={img} />
                     </Content>
                 </Wrapper>
             </a>
@@ -23,7 +23,7 @@ const Thumb = ({title, text, img, url, clickable}) => (
                 <Content>
                     <h3>{title}</h3>
                     <p>{text}</p>
-                    <Img src={img} />
+                    <img src={img} />
                 </Content>
             </Wrapper>
         )}

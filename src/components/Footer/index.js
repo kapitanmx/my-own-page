@@ -2,8 +2,7 @@ import React from 'react';
 import {Wrapper} from './Footer.styles';
 
 const getCurrentYear = () => {
-    const d = new Date();
-    const year = d.getFullYear();
+    const year = new Date().getFullYear();
     return year.toString();
 }
 
